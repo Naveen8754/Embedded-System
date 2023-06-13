@@ -1,8 +1,9 @@
-#include <AT89s52.h>
+#include <AT89S52.h>	/* include header for AT89S52 */ 
+
 void main()
 {
-P3_0=!P3_0;
-while(1)
-{
-}
+  P2_0=0;    	/*Turn ON the LED */
+  while(1)  	/* Super loop (Infinite loop) */
+  {
+  }
 }
