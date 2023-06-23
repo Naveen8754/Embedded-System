@@ -1,0 +1,58 @@
+#include <AT89S52.h>
+/*
+first method*/
+void wait(int);
+const char data[4]={0x81,0x42,0x24,0x18};
+ void main(){
+
+
+int i,j;
+ while(1){
+ for(i=0;i<=3;i++){
+ P0=~data[i];
+ wait(2);
+i++;
+ if(i>3)
+ {
+   i=0;
+   
+ }
+}
+
+ }
+}
+}
+ /*
+ second method
+ #include <AT89S52.h>
+
+void wait(int);
+const char data={0x01,0x02,0x04,0x08,0x10,0x20,0x40,0x80};
+ void main(){
+
+
+int i,j;
+ while(1){
+ for(i=0;i<=3;i++){
+ for(j=7;j>=4;j--){
+ P0=~(data[i]|data[j]);
+ wait(2);
+i++;
+ if(i>3&&j<4)
+ {
+   i=0;
+   j=7;
+ }
+}
+
+ }
+}
+}*/
+void wait(int del)
+{
+int c1,c2;
+for(c1=0; c1<del; c1++){
+for(c2=0;c2<8;c2++){
+}
+}
+}
