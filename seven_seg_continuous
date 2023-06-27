@@ -1,0 +1,39 @@
+#include<AT89S52.h>
+#define sev P0
+
+void wait(int)
+void main()
+{
+
+while(1)
+{
+sev=0xC0;
+wait(1);
+sev=0xF9;
+wait(1);
+sev=0xA4;
+wait(1);
+sev=0xB0;
+wait(1);
+sev=0x99;
+wait(1);
+sev=0x92;
+wait(1);
+sev=0x82;
+wait(1);
+sev=0xF8;
+wait(1);
+sev=0x80;
+wait(1);
+sev=0x90;
+wait(1);
+}
+}
+void wait(int del)
+{
+int c1,c2;
+for(c1=0; c1<del; c1++){
+for(c2=0;c2<15;c2++){
+}
+}
+}
