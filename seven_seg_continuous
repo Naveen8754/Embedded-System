@@ -37,3 +37,32 @@ for(c2=0;c2<15;c2++){
 }
 }
 }
+
+
+SECOND METHOD USING ARRAY
+
+#include<AT89S52.h>
+#define sev P0
+const char arr[]={0xC0,0xF9,0xA4,0xB0,0x99,0x92,0x82,0xF8,0x80,0x90};
+void wait(int);
+void main()
+{
+
+while(1)
+{
+int i;
+for(i=0;i<10;i++)
+{
+sev=arr[i];
+wait(1);
+}
+}
+}
+void wait(int del)
+{
+int c1,c2;
+for(c1=0; c1<del; c1++){
+for(c2=0;c2<15;c2++){
+}
+}
+}
