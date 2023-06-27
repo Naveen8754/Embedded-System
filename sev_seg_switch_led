@@ -1,0 +1,43 @@
+#include<AT89S52.h>
+#define sev P0
+#define SW P1
+const char arr[]={0xC0,0xF9,0xA4,0xB0,0x99,0x92,0x82,0xF8,0x80,0x90};
+const char ay[]={0xFE,0xFD,0xFB,0xF7,0xEF,0xDF,0xBF,0x7F};
+void wait(int);
+void main()
+{
+SW=0xFF;
+sev=0xFF;
+while(1)
+{
+int i;
+char s;
+s=SW;
+for(i=0;i<8;i++)
+{
+if(s==ay[i])
+{
+break;
+}
+else
+{
+}
+}
+if(i!=8)
+{
+sev=arr[i];
+}
+else{
+sev=0xFF;
+}
+}
+}
+
+void wait(int del)
+{
+int c1,c2;
+for(c1=0; c1<del; c1++){
+for(c2=0;c2<15;c2++){
+}
+}
+}
