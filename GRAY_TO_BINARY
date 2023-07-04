@@ -27,6 +27,8 @@
   status2=!G2;  /* INVERTING THE VARIABLES*/
   status1=!G1;
   status0=!G0;
+
+/*LOGIC OF GRAY TO BINARY*/
   B2=!status2;
   B1=!(status2^status1);
   B0=!(status2^status1)^status0;
