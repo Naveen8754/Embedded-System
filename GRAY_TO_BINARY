@@ -10,7 +10,6 @@
   #define INPUT 1        /*logic set to 0 active*/
 
 
-
   
   void main(){
  __bit status2;
