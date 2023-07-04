@@ -1,0 +1,36 @@
+#include <AT89S52.h>   /*include header file*/
+ #define G2 P0_7     /*led connected in port p0.0*/
+ #define G1 P0_6
+ #define G0 P0_5
+ #define B2 P0_2
+ #define B1 P0_1
+ #define B0 P0_0        
+ #define OFF 1       /*logic set to 1 inactive*/
+ #define ON 0 
+  #define INPUT 1        /*logic set to 0 active*/
+
+
+
+  
+  void main(){
+ __bit status2;
+  __bit status1;
+  __bit status0;
+  G2=INPUT;
+  G1=INPUT;
+  G0=INPUT;
+  B2=OFF;
+  B1=OFF;
+  B0=OFF;
+  while(1)
+  {
+  status2=!G2;  /* INVERTING THE VARIABLES*/
+  status1=!G1;
+  status0=!G0;
+  B2=!status2;
+  B1=!(status2^status1);
+  B0=!(status2^status1)^status0;
+  
+  }
+  }
+
