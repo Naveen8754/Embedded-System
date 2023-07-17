@@ -1,0 +1,71 @@
+#include<AT89S52.h>
+#define BUS P0
+#define RS P1_2
+#define RW P1_1
+#define EN P1_0
+
+void lcd_cm(char );
+void lcd_data(char);
+void lcd_busy(void);
+void display(char*);
+
+
+void main()
+{
+EN=0;
+lcd_busy();
+lcd_cm(0x38);
+lcd_cm(0x01);
+lcd_cm(0x0C);
+lcd_cm(0x06);
+lcd_cm(0x80);
+display("Embedded c");
+while(1)
+{
+lcd_cm(0x18);
+}
+}
+void lcd_cm(char c)
+{
+BUS=c;
+RS=0;
+RW=0;
+EN=1;
+EN=0;
+lcd_busy();
+}
+
+void lcd_data(char c )
+{
+BUS=c;
+RS=1;
+RW=0;
+EN=1;
+EN=0;
+lcd_busy();
+}
+void lcd_busy(void)
+{
+char status;
+
+BUS=0xff;
+
+RS=0;
+RW=1;
+EN=1;
+EN=0;
+status =(BUS&0x80);
+while(status!=0)
+{
+EN=1;
+EN=0;
+status =(BUS&0x80);
+}
+}
+void display(char*p)
+{
+while(*p!='\0'){
+lcd_data(*p);
+*p++;
+}
+}
